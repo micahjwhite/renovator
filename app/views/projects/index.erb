@@ -1,0 +1,24 @@
+<header><img src="images/remodel.jpg" class="img-responsive main-image"></header>
+
+<h1>Welcome, <%= @user.username %></h1>
+
+<h3>Create a <a href="/projects/new">new project</a>.</h3>
+
+<% counter = 0 %>
+<% Project.all.each do |project| %>
+    <ul>
+        <li><strong>Project Title: <%= project.title %></strong></li>
+        <li>Description: <%= project.description %></li>
+        <li>Estimated Cost: $<%= project.cost %></li>
+    </ul>
+    <form action="/projects/<%= project.id %>/edit" method="GET">
+    <input type="submit" value="Edit Project">
+    </form><br>
+
+    <% counter += project.cost %>
+<% end %>
+
+<h3>Total Cost: $<%= counter %></h3>
+
+    
+
