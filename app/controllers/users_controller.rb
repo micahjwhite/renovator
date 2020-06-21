@@ -18,6 +18,9 @@ class UsersController < ApplicationController
         end
     end
 
+    # add user EDIT functionality (get and patch)
+    # make sure that only the **current user** can edit
+
     get '/login' do
         if logged_in?
           redirect '/projects'

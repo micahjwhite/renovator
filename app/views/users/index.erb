@@ -1,4 +1,6 @@
-<h1>Renovator Users</h1>
+<h2>Logged in as: <%= @user.username.upcase %></h2>
+
+<h3>Renovator Users:</h3>
 
 <% User.all.each do |user| %>
 <ul>

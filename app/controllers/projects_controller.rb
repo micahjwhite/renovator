@@ -19,11 +19,17 @@ class ProjectsController < ApplicationController
     end
     
     post '/projects' do
-        if params[:title].empty? || params[:description].empty? || params[:cost].empty?
-          redirect '/projects/new'
+        if logged_in?
+            @user = User.find(session[:user_id])
+            if params[:title].empty? || params[:description].empty? || params[:cost].empty?
+                redirect '/projects/new'
+            else
+                @project = Project.create(:title => params[:title], :description => params[:description], :cost => params[:cost], :user_id => session[:user_id])
+                
+                redirect '/projects'
+            end
         else
-          @project = Project.create(:title => params[:title], :description => params[:description], :cost => params[:cost], :user_id => session[:user_id])
-          redirect '/projects'
+            redirect '/login'
         end
     end
     
