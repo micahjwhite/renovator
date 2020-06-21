@@ -1,0 +1,7 @@
+<h1>Renovator Users</h1>
+
+<% User.all.each do |user| %>
+<ul>
+    <li><strong><%= user.username %></strong></li>
+</ul>
+<% end %>

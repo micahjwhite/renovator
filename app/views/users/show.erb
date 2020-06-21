@@ -1,0 +1,9 @@
+<h1>Welcome, <%= @user.username %></h1>
+
+<% @user.projects.each do |project| %>
+<ul>
+    <li><strong>Title:</strong> <%= project.title %></li>
+    <li><strong>Description:</strong> <%= project.description %></li>
+    <li><strong>Estimated Cost:</strong> $<%= project.cost %></li>
+</ul>
+<% end %>
