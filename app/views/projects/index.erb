@@ -2,22 +2,26 @@
 <h1>Hi, <%= @user.username.upcase %>. Here are your projects. :)</h1>
 
 <% counter = 0 %>
+
 <% @user.projects.each do |project| %>
+    <div class="individual-project">
     <ul>
         <li><strong>Project Title: <%= project.title %></strong></li>
         <li>Description: <%= project.description %></li>
-        <li>Estimated Cost: $<%= project.cost %></li>
+        <li>Estimated Cost: $<%= project.cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></li>
     </ul>
     <form action="/projects/<%= project.id %>/edit" method="GET">
-    <input type="submit" value="Edit Project">
-    </form><br>
+    <input class="button" type="submit" value="Edit Project">
+    </form>
+    </div>
 
     <% counter += project.cost %>
 <% end %>
 
-<h3>Total Cost: $<%= counter %></h3>
+<!-- gsub to insert comma into numbers above 999 -->
+<h3>Total Cost: $<%= counter.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></h3>
 
-<h3>Create a <a href="/projects/new">new project</a>.</h3>
+<a href="/projects/new">Create a new project.</a>
 
     
 

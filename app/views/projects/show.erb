@@ -1,7 +1,7 @@
 <h1><strong>Project <%= @project.id %></strong></h1>
 <h3>Title: <%= @project.title %></h3>
 <h3>Description: <%= @project.description %></h3>
-<h3>Estimated Cost: $<%= @project.cost %></h3>
+<h3>Estimated Cost: $<%= @project.cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></h3>
 
 <form action="/projects/<%= @project.id %>/edit" method="GET">
 <input type="submit" value="Edit Project">

@@ -31,6 +31,50 @@
     border-radius: 25px;
   }
 
+  .title h1 {
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    font-weight: lighter;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: slategray;
+    box-shadow: 1px 0.5px 0px 0px;
+    opacity: 0.8;
+  }
+
+  a:hover {
+    opacity: 1;
+  }
+
+  .button {
+    background-color: skyblue;
+    font-weight: bolder;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+    opacity: 0.7;
+  }
+
+  .button:hover {
+    opacity: 1;
+  }
+
+  #center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   h1 {
     font-size: 36px;
     line-height: 54px;
@@ -56,11 +100,6 @@
     overflow: hidden;
   }
 
-  .content {
-    float: left;
-    width: 60%; /* 480px / 800px */
-  }
-
   .sidebar {
     background: #eee;
     border: 1px solid #ccc;
@@ -83,6 +122,47 @@
     padding-top: 20px;
   }
 
+  .individual-project {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 25px;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .username {
+    width: 150px;
+    padding: 5px;
+  }
+
+  .login {
+    width: 150px;
+    padding: 5px;
+  }
+
+  .password {
+    width: 150px;
+    padding: 5px;
+  }
+
+  .submit {
+    text-decoration: none;
+    color: black;
+    font-weight: heavier;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 10px;
+    background-color: slategray;
+    box-shadow: 1px 0.5px 0px 0px;
+    opacity: 0.8;
+  }
+  
+  .submit:hover {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 600px) {
