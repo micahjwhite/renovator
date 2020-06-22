@@ -9,12 +9,12 @@
     <label for="edit_cost">Estimated Cost:</label>
     <input type="text" name="cost" value="<%= @project.cost %>" required><br><br>
 
-    <input type="submit" name="submit" id="submit" value="Submit Edit">
+    <input class="button" type="submit" name="submit" id="submit" value="Submit Edit">
 
   </form>
-  <br>
+  
 
   <form action="/projects/<%= @project.id %>" method="POST">
     <input id="hidden" type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="Delete Project">
+    <input class="button" type="submit" value="Delete Project">
   </form>

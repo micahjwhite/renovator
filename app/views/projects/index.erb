@@ -23,6 +23,12 @@
     <form action="/projects/<%= project.id %>/edit" method="GET">
     <input class="button" type="submit" value="Edit Project">
     </form>
+   
+    <form action="/projects/<%= project.id %>" method="POST">
+    <input id="hidden" type="hidden" name="_method" value="DELETE">
+    <input class="button" type="submit" value="Delete Project">
+    </form>
+
     </div>
     <br>
 
