@@ -8,7 +8,11 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index
+    if !logged_in?
+      erb :index
+    else
+      redirect '/projects'
+    end
   end
 
   helpers do
