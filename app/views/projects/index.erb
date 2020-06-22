@@ -1,13 +1,4 @@
-<% if @success_message %>
-  <div id="success" style="display: inline-block; background-color: rosybrown; border: 1px solid black; border-radius: 5px; padding: 5px; margin-top: 10px; margin-bottom: 10px;">
-  <%= @success_message %>
-  </div>
-<% end %>
-<% if @update_message %>
-  <div id="success" style="display: inline-block; background-color: rosybrown; border: 1px solid black; border-radius: 5px; padding: 5px; margin-top: 10px; margin-bottom: 10px;">
-  <%= @update_message %>
-  </div>
-<% end %>
+
 
 <h1>Hi, <%= @user.username.upcase %>. You have <%= @user.projects.count %> project[s]!</h1>
 

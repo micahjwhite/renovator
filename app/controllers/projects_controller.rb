@@ -7,8 +7,6 @@ class ProjectsController < ApplicationController
           @user = User.find(session[:user_id])
           @success_message = session[:message]
           session[:success_message] = nil
-          @update_message = session[:update_message]
-          session[:update_message] = nil
 
           erb :'projects/index'
         end
@@ -76,7 +74,7 @@ class ProjectsController < ApplicationController
           @project.description = params[:description]
           @project.cost = params[:cost]
           @project.save
-          session[:update_message] = "Nice! You edited your project!"
+          
           redirect "/projects"
         end
     end

@@ -24,6 +24,11 @@
         <img src="/images/wrench_hammer.jpg" class="img-responsive main-image" id="center">
       </div>
       <br>
+      <% if @success_message %>
+          <div id="success" style="display: inline-block; background-color: rosybrown; border: 1px solid black; border-radius: 5px; padding: 5px; margin-top: 10px; margin-bottom: 10px;">
+          <%= @success_message %>
+          </div>
+        <% end %>
 
         <%= yield %>
 
