@@ -1,5 +1,10 @@
+<% if @success_message %>
+  <div id="success" style="display: inline-block; background-color: rosybrown; border: 1px solid black; border-radius: 5px; padding: 5px; margin-top: 10px; margin-bottom: 10px;">
+  <%= @success_message %>
+  </div>
+<% end %>
 
-<h1>Hi, <%= @user.username.upcase %>. Here are your projects. :)</h1>
+<h1>Hi, <%= @user.username.upcase %>. You have <%= @user.projects.count %> project[s]!</h1>
 
 <% counter = 0 %>
 
@@ -14,6 +19,7 @@
     <input class="button" type="submit" value="Edit Project">
     </form>
     </div>
+    <br>
 
     <% counter += project.cost %>
 <% end %>
@@ -21,7 +27,7 @@
 <!-- gsub to insert comma into numbers above 999 -->
 <h3>Total Cost: $<%= counter.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></h3>
 
-<a href="/projects/new">Create a new project.</a>
+<a href="/projects/new">Create New Project</a>
 
     
 

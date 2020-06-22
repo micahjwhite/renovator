@@ -69,7 +69,7 @@
     opacity: 1;
   }
 
-  #center {
+  img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -81,7 +81,6 @@
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
     font-size: 24px;
     line-height: 36px;
     margin-bottom: 16px;
@@ -98,18 +97,6 @@
 
   .main {
     overflow: hidden;
-  }
-
-  .sidebar {
-    background: #eee;
-    border: 1px solid #ccc;
-    float: right;
-    padding: 2.08333333333%; /* 5px / 240px */
-    width: 30%; /* 240px / 800px */
-  }
-
-  .sidebar ul {
-    font-size: 14px;
   }
 
   .branding {
@@ -147,22 +134,28 @@
   }
 
   .submit {
+    display: inline-block;
     text-decoration: none;
     color: black;
-    font-weight: heavier;
+    font-weight: lighter;
     border-style: solid;
     border-width: 0.5px;
     border-radius: 5px;
     padding: 5px;
     margin-right: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     background-color: slategray;
     box-shadow: 1px 0.5px 0px 0px;
     opacity: 0.8;
+    line-height: 18px;
+    font-family: sans-serif;
   }
   
   .submit:hover {
     opacity: 1;
   }
+
 }
 
 @media screen and (max-width: 600px) {

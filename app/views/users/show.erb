@@ -1,10 +1,16 @@
-<h1>Welcome, <%= @user.username %></h1>
+
+<h2>Welcome, <%= @user.username.upcase %>. You have <%= @user.projects.count %> project[s]!</h2>
 
 <% @user.projects.each do |project| %>
-<ul>
-    <li><strong>Title:</strong> <%= project.title %></li>
-    <li><strong>Description:</strong> <%= project.description %></li>
-    <li><strong>Estimated Cost:</strong> $<%= project.cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></li>
-</ul>
+<div class="individual-project">
+    <ul>
+        <li><strong>Title:</strong> <%= project.title %></li>
+        <li><strong>Description:</strong> <%= project.description %></li>
+        <li><strong>Estimated Cost:</strong> $<%= project.cost.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></li>
+    </ul>
+    <form action="/projects/<%= project.id %>/edit" method="GET">
+    <input class="button" type="submit" value="Edit Project">
+    </form>
+</div>
 <br>
 <% end %>

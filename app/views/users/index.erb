@@ -4,6 +4,6 @@
 
 <% User.all.each do |user| %>
 <ul>
-    <li><strong><%= user.username %></strong></li>
+    <li><strong><%= user.id %>. <%= user.username %></strong></li>
 </ul>
 <% end %>

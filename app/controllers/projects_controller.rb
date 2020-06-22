@@ -5,6 +5,9 @@ class ProjectsController < ApplicationController
           redirect '/login'
         else
           @user = User.find(session[:user_id])
+          @success_message = session[:message]
+          session[:success_message] = nil
+
           erb :'projects/index'
         end
     end
@@ -25,6 +28,8 @@ class ProjectsController < ApplicationController
                 redirect '/projects/new'
             else
                 @project = Project.create(:title => params[:title], :description => params[:description], :cost => params[:cost], :user_id => session[:user_id])
+
+                session[:message] = "Nice! You created a new project!"
                 
                 redirect '/projects'
             end
@@ -35,19 +40,28 @@ class ProjectsController < ApplicationController
     
     get '/projects/:id' do
         if !logged_in?
-          redirect '/login' 
+            redirect '/login' 
         else
-          @project = Project.find(params[:id])
-          erb :'/projects/show'
+            @project = Project.find(params[:id])
+            if @project && @project.user == current_user
+                erb :'/projects/show'
+            else
+                redirect '/login'
+            end
         end
     end
     
     get '/projects/:id/edit' do
         if !logged_in?
-          redirect '/login' 
+            redirect '/login' 
         else
-          @project = Project.find(params[:id])
-          erb :'/projects/edit'
+            @user = User.find(session[:user_id])
+            @project = Project.find(params[:id])
+            if @project && @project.user == current_user
+                erb :'/projects/edit'
+            else
+                redirect '/login'
+            end
         end
     end
     
