@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Renovator is a Sinatra application using an MVC (model-controller-view) structure. This application uses sqlite3 to store data and ActiveRecord to create associations.
+Renovator is a Sinatra application using an MVC structure. This application uses sqlite3 to store data and ActiveRecord to create associations.
 
 ## Overview
 
