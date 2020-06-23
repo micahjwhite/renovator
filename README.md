@@ -20,7 +20,7 @@ This application enables the user to easily build home-renovation projects and i
 
 ## Contributor's Guide
 
-If you find a bug, please open a new issue. Please a title, a clear description of the problem, and a code sample or executable test case that demonstrates that the application is not behaviing as expected.
+If you find a bug, please open a new issue. Please include a title, a clear description of the problem, and a code sample or executable test case that demonstrates that the application is not behaviing as expected.
 
 If you write a patch that fixes a bug, please open a GitHub pull request with the patch and ensure that the pull request description describes the problem and solution.
 
