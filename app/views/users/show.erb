@@ -1,5 +1,5 @@
 
-<h2>Welcome, <%= @user.username.upcase %>. You have <%= @user.projects.count %> project[s]!</h2>
+<h2>Welcome, <%= @user.username %>. You have <%= @user.projects.count %> project[s]!</h2>
 
 <% @user.projects.each do |project| %>
 <div class="individual-project">
