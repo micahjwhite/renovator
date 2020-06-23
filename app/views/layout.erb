@@ -25,7 +25,7 @@
       </div>
       <br>
       <% flash_types.select{ |kind| flash.has?(kind) }.each do |kind| %>
-        <div class="flash <%= kind %>" style="display: inline-block; padding: 5px; margin-bottom: 10px; border: 0.5px solid; background-color: rgb(255, 153, 153); border-radius: 5px;">
+        <div class="flash <%= kind %>" id="animation">
           <%= flash[kind] %>
         </div>
       <% end %>
