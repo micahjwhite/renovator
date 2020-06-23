@@ -38,6 +38,7 @@ class UsersController < ApplicationController
         else
             @user = User.find(params[:id])
             if params[:username].empty? && params[:location].empty?
+                flash[:error] = "Please update your information below."
                 redirect "/users/#{@user.id}/edit"
             else
                 @user.username = params[:username]
@@ -76,7 +77,8 @@ class UsersController < ApplicationController
     
       post '/signup' do
         if params[:username].empty? || params[:password].empty?
-          redirect '/signup'
+            flash[:error] = "Please complete the username and password fields below to sign up. Location is optional."
+            redirect '/signup'
         else
           @user = User.create(username: params[:username], password: params[:password], location: params[:location])
           session[:user_id] = @user.id

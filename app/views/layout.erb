@@ -24,13 +24,13 @@
         <img src="/images/wrench_hammer.jpg" class="img-responsive main-image" id="center">
       </div>
       <br>
-      <% if @success_message %>
-          <div id="success" style="display: inline-block; background-color: rosybrown; border: 1px solid black; border-radius: 5px; padding: 5px; margin-top: 10px; margin-bottom: 10px;">
-          <%= @success_message %>
-          </div>
-        <% end %>
+      <% flash_types.select{ |kind| flash.has?(kind) }.each do |kind| %>
+        <div class="flash <%= kind %>" style="display: inline-block; padding: 5px; margin-bottom: 10px; border: 0.5px solid; background-color: rgb(255, 153, 153); border-radius: 5px;">
+          <%= flash[kind] %>
+        </div>
+      <% end %>
 
-        <%= yield %>
+      <%= yield %>
 
       <footer class="branding">
         <small>&copy; 2020 <strong>Renovator</strong></small>

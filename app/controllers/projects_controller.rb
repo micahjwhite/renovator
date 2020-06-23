@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
             else
                 @project = Project.create(:title => params[:title], :description => params[:description], :cost => params[:cost], :user_id => session[:user_id])
 
-                session[:message] = "Nice! You created a new project!"
+                flash[:success] = "Nice! You created a new project!"
                 
                 redirect '/projects'
             end
@@ -74,6 +74,7 @@ class ProjectsController < ApplicationController
           @project.description = params[:description]
           @project.cost = params[:cost]
           @project.save
+          flash[:success] = "Nice! You edited your project!"
           
           redirect "/projects"
         end

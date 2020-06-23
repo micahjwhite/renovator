@@ -1,3 +1,5 @@
+require 'rack-flash'
+
 class ApplicationController < Sinatra::Base
   
   configure do
@@ -5,6 +7,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
     enable :sessions
     set :session_secret, "password_secret"
+    use Rack::Flash, :sweep => true
   end
 
   get '/' do
@@ -22,6 +25,10 @@ class ApplicationController < Sinatra::Base
 
     def current_user
       User.find(session[:user_id])
+    end
+
+    def flash_types
+      [:success, :notice, :warning, :error]
     end
   end
 
