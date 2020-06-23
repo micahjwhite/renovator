@@ -17,3 +17,11 @@ This application enables the user to easily build home-renovation projects and i
 5. Navigate to the local host in your browswer.
 6. Sign up for an account by entering a username and a password.
 7. Build some home-renovation projects! :)
+
+## Contributor's Guide
+
+If you find a bug, please open a new issue. Please a title, a clear description of the problem, and a code sample or executable test case that demonstrates that the application is not behaviing as expected.
+
+If you write a patch that fixes a bug, please open a GitHub pull request with the patch and ensure that the pull request description describes the problem and solution.
+
+If you'd like to add a new feature or modify an existing feature, please send me a message at micahjwhite@gmail.com.
