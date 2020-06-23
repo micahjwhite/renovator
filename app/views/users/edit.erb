@@ -1,0 +1,14 @@
+<h1>Update Your Account</h1>
+
+<form action="/users/<%= @user.id %>" method="POST">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+    <h3>Current Username: <%= @user.username %></h3><br>
+
+    <label for="new_username">New Username:</label>
+    <input type="text" name="username" required><br><br>
+
+    <input class="button" type="submit" value="Update">
+
+</form>
+

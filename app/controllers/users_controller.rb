@@ -18,6 +18,34 @@ class UsersController < ApplicationController
         end
     end
 
+    get '/users/:id/edit' do
+        if !logged_in?
+            redirect '/login'
+        else
+            @user = User.find_by(id: session[:user_id])
+            if @user == current_user
+                erb :'users/edit'
+            else
+                redirect '/login'
+            end
+        end
+    end
+
+    patch '/users/:id' do
+        if !logged_in?
+            redirect '/login'
+        else
+            @user = User.find(params[:id])
+            if params[:username].empty?
+                redirect "/users/#{@user.id}/edit"
+            else
+                @user.username = params[:username]
+                @user.save
+                redirect "/users/#{@user.id}"
+            end
+        end
+    end
+
     get '/login' do
         if logged_in?
           redirect '/projects'
