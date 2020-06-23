@@ -36,10 +36,11 @@ class UsersController < ApplicationController
             redirect '/login'
         else
             @user = User.find(params[:id])
-            if params[:username].empty?
+            if params[:username].empty? && params[:location].empty?
                 redirect "/users/#{@user.id}/edit"
             else
                 @user.username = params[:username]
+                @user.location = params[:location]
                 @user.save
                 redirect "/users/#{@user.id}"
             end
@@ -76,7 +77,7 @@ class UsersController < ApplicationController
         if params[:username].empty? || params[:password].empty?
           redirect '/signup'
         else
-          @user = User.create(username: params[:username], password: params[:password])
+          @user = User.create(username: params[:username], password: params[:password], location: params[:location])
           session[:user_id] = @user.id
           redirect '/projects'
         end

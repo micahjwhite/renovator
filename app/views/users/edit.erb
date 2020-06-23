@@ -3,10 +3,11 @@
 <form action="/users/<%= @user.id %>" method="POST">
     <input type="hidden" id="hidden" name="_method" value="PATCH">
 
-    <h3>Current Username: <%= @user.username %></h3><br>
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="<%= @user.username %>"><br><br>
 
-    <label for="new_username">New Username:</label>
-    <input type="text" name="username" required><br><br>
+    <label for="location">Location:</label>
+    <input type="text" name="location" value="<%= @user.location %>"><br><br>
 
     <input class="button" type="submit" value="Update">
 
