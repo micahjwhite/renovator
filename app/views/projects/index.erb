@@ -29,7 +29,7 @@
 <!-- gsub to insert comma into numbers above 999 -->
 <h3>Total Cost: $<%= counter.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse %></h3>
 
-<a href="/projects/new">Create New Project</a>
+<a href="/projects/new">Create New Project</a> <a href="/users/<%= @user.id %>/edit">Update Account</a>
 
     
 

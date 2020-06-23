@@ -22,7 +22,8 @@ class UsersController < ApplicationController
         if !logged_in?
             redirect '/login'
         else
-            @user = User.find_by(id: session[:user_id])
+            # @user = User.find_by(id: session[:user_id])
+            @user = User.find(params[:id])
             if @user == current_user
                 erb :'users/edit'
             else

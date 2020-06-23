@@ -1,5 +1,9 @@
 <h2>Logged in as: <%= @user.username.upcase %></h2>
 
+<a href="/users/<%= @user.id %>">View Account</a>
+
+<a href="/users/<%= @user.id %>/edit">Update Account</a>
+
 <h3>Renovator Users:</h3>
 
 <% User.all.each do |user| %>
