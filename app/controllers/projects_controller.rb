@@ -5,8 +5,6 @@ class ProjectsController < ApplicationController
           redirect '/login'
         else
           @user = User.find(session[:user_id])
-          @success_message = session[:message]
-          session[:success_message] = nil
 
           erb :'projects/index'
         end
