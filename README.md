@@ -25,3 +25,7 @@ If you find a bug, please open a new issue. Please include a title, a clear desc
 If you write a patch that fixes a bug, please open a GitHub pull request with the patch and ensure that the pull request description describes the problem and solution.
 
 If you'd like to add a new feature or modify an existing feature, please send me a message at micahjwhite@gmail.com.
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
