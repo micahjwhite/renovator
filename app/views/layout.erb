@@ -24,12 +24,7 @@
         <img src="/images/wrench_hammer.jpg" class="img-responsive main-image" id="center">
       </div>
       <br>
-      <% flash_types.select{ |kind| flash.has?(kind) }.each do |kind| %>
-        <div class="flash <%= kind %>" id="animation">
-          <%= flash[kind] %>
-        </div>
-      <% end %>
-
+     
       <%= yield %>
 
       <footer class="branding">
