@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
         if !logged_in?
             redirect '/login' 
         else
-            @user = User.find(session[:user_id])
+            # @user = User.find(session[:user_id])
             @project = Project.find(params[:id])
             if @project && @project.user == current_user
                 erb :'/projects/edit'

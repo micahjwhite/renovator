@@ -75,13 +75,20 @@ class UsersController < ApplicationController
       end
     
       post '/signup' do
-        if params[:username].empty? || params[:password].empty?
-            redirect '/signup'
+        @user = User.create(username: params[:username], password: params[:password], location: params[:location])
+        if @user.valid?
+            session[:user_id] = @user.id
+            redirect '/projects'
         else
-          @user = User.create(username: params[:username], password: params[:password], location: params[:location])
-          session[:user_id] = @user.id
-          redirect '/projects'
+            redirect '/signup'
         end
+        # if params[:username].empty? || params[:password].empty?
+        #     redirect '/signup'
+        # else
+        #   @user = User.create(username: params[:username], password: params[:password], location: params[:location])
+        #   session[:user_id] = @user.id
+        #   redirect '/projects'
+        # end
       end
     
       get '/logout' do
