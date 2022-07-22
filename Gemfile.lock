@@ -58,8 +58,6 @@ GEM
       method_source (~> 1.0)
     public_suffix (4.0.5)
     rack (2.2.3)
-    rack-flash (0.1.2)
-      rack
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -111,7 +109,7 @@ GEM
       ripl-multi_line (>= 0.2.4)
       ripl-rack (>= 0.2.0)
       sinatra (>= 1.2.1)
-    tzinfo (1.2.7)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
@@ -125,7 +123,6 @@ DEPENDENCIES
   capybara
   database_cleaner!
   pry
-  rack-flash
   rack-test
   rake
   require_all
